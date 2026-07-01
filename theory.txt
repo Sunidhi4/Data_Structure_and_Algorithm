@@ -1,0 +1,14 @@
+size of int is 4 byte and character is 1 byte .
+
+Functions occupy space in memory in call stack form.
+Function overloading only depends on parameter does not depend on return type.
+
+Array is the List of element of the same type placed in a contiguous memory location.
+
+-infinity = Integer.MIN_VALUE 
++infinity = Integer.MAX_VALUE
+
+
+Kadane's Algorithm -> Kadane's algorithm says doing the sum of high negative number with small positive number give you negative maximum sum 
+to prevent form this type of answer we will consider zero is our current sum rather than negative maxSum and does not calculate 
+that type of sum .

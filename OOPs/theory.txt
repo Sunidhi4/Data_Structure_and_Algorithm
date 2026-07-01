@@ -1,0 +1,159 @@
+DEFINATIONS : 
+
+Four pillars of OOPs :
+
+1.Encapsulation.
+2. Inheritance.
+3. Abstraction.
+4.Polymorphism.
+
+
+Class : Class is a blue print of a object. class stores blue type of variable and method related to object .object are store in heap 
+      memory .new key word create a object in heap memory which contains property of object which is written in class.
+
+Access Modifier : Access modifier is used to define who can access data and provide security .
+                   there are four types of access modifier in java :- 1. private
+                                                                      2. default.
+                                                                      3.protected.
+                                                                      4.public
+                     this serial vise name is also their security level private is highly secure used only in a class , if we does 
+                     not define any access modifier in java it automatically considered as default , In default we can use data on class
+                     and within a package . next is protected protected can be used in class, package within and also outside the package .
+                     by subclass only. and public can be used by any one.
+
+Encapsulation  :  Encapsulation is defined as the wrapping up of data & methods under a single unit . It also implements data hiding.
+
+Constructor : Constructor is a special method which is involved automatically at the time of object creaation.
+              -Constructor have the same name as class or structure.
+              -Constructor don't have a return type . (Not even void ).
+              -Constructor are only called once. at objecct creation.
+              -Memory alloction happens when constructor is called.
+              -If we does not define  constructor in class then automatically default constructor is called in java.
+Types of Constructor :
+1. Non - parameterized Constructor.
+2. Parameterized Constructor.
+3.Copy Constructor :- object 01 ki properties ko object 02 me copy kr dena.
+                        there are two types of copy constructor which is deep and shallow copy.shallow copy reflects changes but deep 
+                        copy does not reflects changes .
+                        Lazy copy give more details about copy constructor in stack overfall and other websites.
+                        
+Inheritance : Inheritance is when properties  & methods of base class passed on to a derived class.
+
+Types of Inheritance :- 1. Single level inheritance => means single base class and single derived class.
+                        2.Multi Level inheritance => means one base class its derived class is also base class for another derived class.
+                        3. Hierarchial inheritance => means one base class have multiple derived class.
+                        4.Hybrid inheritance => means mixture of two or more than two inheritance.
+
+Note : multiple inheritance does not work with class but with interfaces.
+
+Polymorphism : try to do similar things in multiple form.
+              - Compile Time polymorphism (static)
+              ->Method overloading.
+              Multiple functions with the same name but different parameters.
+              
+              -Run Time polymorphism.(dynamic)
+              ->Method Overriding.
+              Parent and child classes both contains the same function with a different defination.
+
+Abstraction : Hiding all the unnecessary details and showing only the important parts to the user.
+               -Cannot create an instance of abstract class.
+               -Can have abstraction - abstract methods.
+               -can have contructors.
+
+Interface : Interface is a blue print of a class. its will implements multiple inheritance .To achive total abstraction.
+            -All methods are public , abstract & without implementation.
+            -Used to achieve total abstraction.
+            -Variable in the interface are final , public and static.
+
+Static Keyword : Static keyword in java  is used to share the same variable or method of a given class.
+                - properties.
+                -Function.
+                -Blocks.
+                -Nested Classes.
+
+Super Keyword : Super Keyword is used to refer immediate parent class object.
+               -to access parent's properties.
+               -to access parent's functions.
+               -to access parent's constructor.
+
+Note: base class refrence = new object of derived class.
+
+Constructor Chaining : **Constructor chaining** is a concept in object-oriented programming (OOP) where 
+one constructor calls another constructor within the same class or in the superclass. This is typically
+ done to reduce code duplication and ensure that objects are initialized correctly, especially when a 
+ class has multiple constructors with different parameters.
+
+### Types of Constructor Chaining:
+1. **Within the same class (using `this`)**:
+   In this case, one constructor calls another constructor within the same class. 
+   This helps when multiple constructors are needed to handle different initialization scenarios 
+   but share some common setup code.
+
+   ```java
+   class MyClass {
+       int x;
+       int y;
+
+       // Constructor 1
+       MyClass(int x) {
+           this(x, 0);  // Calling Constructor 2
+       }
+
+       // Constructor 2
+       MyClass(int x, int y) {
+           this.x = x;
+           this.y = y;
+       }
+   }
+   ```
+
+   In this example, when the first constructor is called with one argument (`MyClass(int x)`), 
+   it invokes the second constructor (`MyClass(int x, int y)`) with a default value for `y`.
+
+2. **Between subclass and superclass (using `super`)**:
+   In Java and many other OOP languages, you can also chain constructors from a subclass to a 
+   superclass using the `super()` keyword. This is often done to ensure that the parent class is properly
+    initialized before initializing the subclass.
+
+   ```java
+   class Animal {
+       String name;
+
+       // Constructor in superclass
+       Animal(String name) {
+           this.name = name;
+       }
+   }
+
+   class Dog extends Animal {
+       int age;
+
+       // Constructor in subclass
+       Dog(String name, int age) {
+           super(name);  // Calling superclass constructor
+           this.age = age;
+       }
+   }
+   ```
+
+   In this example, the `Dog` constructor calls the `Animal` constructor using `super(name)` to initialize the
+    `name` field in the parent class before initializing the `age` field in the `Dog` class.
+
+### Benefits of Constructor Chaining:
+- **Code Reusability**: By reusing constructors, you avoid repeating initialization code in each constructor.
+
+- **Maintainability**: If initialization logic changes, you only need to modify one constructor instead 
+of multiple ones.
+
+- **Clearer Logic**: Constructor chaining clarifies the intention behind different constructor variations, 
+making the code easier to follow and maintain.
+
+### Rules in Java (and similar languages):
+- Constructor chaining can happen **within the same class** using `this()` or **between parent and child classes**
+ using `super()`.
+
+- The constructor chaining must happen as the first statement in the constructor, whether using
+ `this()` or `super()`.
+
+In summary, constructor chaining is a technique used to call one constructor from another within the same 
+class or between a subclass and superclass, making object initialization more efficient and manageable.
